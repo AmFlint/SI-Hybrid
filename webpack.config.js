@@ -24,22 +24,15 @@ if (isProd) {
   webpackPlugins.push(new UglifyJsPlugin());
 }
 
-let entryPoints = [];
-
-if (!isProd) {
-  entryPoints= [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://0.0.0.0:9000',
-    'webpack/hot/only-dev-server'
-  ]
-}
-
-entryPoints.push('./src/index.js');
-
 module.exports = {
   devtool: 'eval-source-map',
   context: __dirname,
-  entry: entryPoints,
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://0.0.0.0:9000',
+    'webpack/hot/only-dev-server',
+    './src/index.js'
+  ],
   output: {
     path: path.resolve(__dirname, 'www'),
     filename: 'app-[hash].bundle.js'
