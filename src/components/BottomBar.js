@@ -4,6 +4,7 @@ import {hello} from "../actions/homeActions";
 import {connect} from "react-redux";
 import Ons from "react-onsenui";
 import { Page, Tabbar, Tab, Toolbar } from 'react-onsenui'
+import Card from './Card'
 
 class MyTab extends Component {
     render() {
@@ -29,18 +30,26 @@ class BottomBar extends Component {
     renderTabs() {
         return [
             {
-                content: <MyTab content="Welcome home" />,
-                tab: <Tab label='Home' icon='md-home' />
+                content: <Card placeName="Villa Allo" placeDescription="Villa qui fait peur" placeLevel="Débutant" placeImg="https://s-media-cache-ak0.pinimg.com/originals/cf/93/3b/cf933b20b42acce1ddb3ab2acda02314.jpg" />,
+                tab: <Tab label="Accueil" icon="md-search" />
             },
             {
-                content: <MyTab content="Change the settings" />,
-                tab: <Tab label='Settings' icon='md-settings' />
+                content: <MyTab content="Rechercher" />,
+                tab: <Tab label="Rechercher" icon="md-search" />
+            },
+            {
+                content: <MyTab content="Histoire" />,
+                tab: <Tab label='Histoire' icon='md-home' />
+            },
+            {
+                content: <MyTab content="Profile" />,
+                tab: <Tab label="Profile" icon="md-search" />
             }
         ]
     }
 
     renderToolbar = () => {
-        const titles = ['Home', 'Settings'];
+        const titles = ['Accueil', 'Rechercher', 'Histoire', 'Profil'];
         return (
             <Toolbar>
                 <div className='center'>{titles[this.state.index]}</div>
