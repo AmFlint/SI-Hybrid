@@ -31,6 +31,10 @@ class BottomBar extends Component {
     renderTabs() {
         return [
             {
+                content: <Card placeName="Villa Allo" placeDescription="Villa qui fait peur" placeLevel="Débutant" placeImg="https://s-media-cache-ak0.pinimg.com/originals/cf/93/3b/cf933b20b42acce1ddb3ab2acda02314.jpg" />,
+                tab: <Tab label="Accueil" icon="md-search" />
+            },
+            {
                 content: <MyTab content="Welcome home"/>,
                 tab: <Tab label='Home' icon='md-home'/>
             },
@@ -41,10 +45,6 @@ class BottomBar extends Component {
             {
                 content: <MyTab content="Rechercher" />,
                 tab: <Tab label="Rechercher" icon="md-search" />
-            },
-            {
-                content: <Card placeName="Villa Allo" placeDescription="Villa qui fait peur" placeLevel="Débutant" placeImg="https://s-media-cache-ak0.pinimg.com/originals/cf/93/3b/cf933b20b42acce1ddb3ab2acda02314.jpg" />,
-                tab: <Tab label="Accueil" icon="md-search" />
             }
         ]
     }
