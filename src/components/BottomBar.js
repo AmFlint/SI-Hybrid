@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {bindActionCreators} from "redux";
 import {hello} from "../actions/homeActions";
 import {connect} from "react-redux";
 import Ons from "react-onsenui";
-import { Page, Tabbar, Tab, Toolbar } from 'react-onsenui'
+import {Page, Tabbar, Tab, Toolbar} from 'react-onsenui';
+import SignUp from '../containers/signUp'
 
 class MyTab extends Component {
     render() {
@@ -11,7 +12,7 @@ class MyTab extends Component {
             <Page>
                 <section style={{margin: '16px'}}>
                     <p>
-                        {this.props.content}.
+                        {this.props.content}
                     </p>
                 </section>
             </Page>
@@ -23,18 +24,22 @@ class MyTab extends Component {
 class BottomBar extends Component {
 
     state = {
-        index : 0,
+        index: 0,
     };
 
     renderTabs() {
         return [
             {
-                content: <MyTab content="Welcome home" />,
-                tab: <Tab label='Home' icon='md-home' />
+                content: <MyTab content="Welcome home"/>,
+                tab: <Tab label='Home' icon='md-home'/>
             },
             {
-                content: <MyTab content="Change the settings" />,
-                tab: <Tab label='Settings' icon='md-settings' />
+                content: <MyTab content="Change the settings"/>,
+                tab: <Tab label='Settings' icon='md-settings'/>
+            },
+            {
+                content: <SignUp/>,
+                tab: <Tab label='yo' icon='md-settings'/>
             }
         ]
     }
@@ -55,8 +60,7 @@ class BottomBar extends Component {
                     swipeable={true}
                     position='auto'
                     index={this.state.index}
-                    onPreChange={(event) =>
-                    {
+                    onPreChange={(event) => {
                         if (event.index !== this.state.index) {
                             this.setState({index: event.index});
                         }
@@ -70,10 +74,9 @@ class BottomBar extends Component {
 }
 
 
-
 function mapStateToProps(state) {
     return {
-        homeMessage : state.home.message
+        homeMessage: state.home.message
     }
 }
 
@@ -81,7 +84,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
             hello
         }, dispatch
-)}
+    )
+}
 
 export default connect(
     mapStateToProps,
