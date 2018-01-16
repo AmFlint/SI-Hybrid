@@ -1,0 +1,26 @@
+// Media queries
+$s-width : 768px; // small width
+$m-width : 992px; // medium width
+$l-width : 1200px; // large width
+$xl-width : 1600px; // xlarge width
+
+$min-small-width : "only screen and (min-width:#{$s-width})";
+$min-medium-width : "only screen and (min-width:#{$m-width})";
+$min-large-width : "only screen and (min-width:#{$l-width})";
+
+/*
+include in your content like this
+
+ p {
+  font-size: 16px;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include desktop {
+    font-size: 20px;
+  }
+}
+
+*/
