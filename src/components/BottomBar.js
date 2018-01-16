@@ -3,7 +3,6 @@ import {bindActionCreators} from "redux";
 import {hello} from "../actions/homeActions";
 import {connect} from "react-redux";
 import Ons from "react-onsenui";
-import {Page, Tabbar, Tab, Toolbar} from 'react-onsenui';
 import SignUp from '../containers/signUp';
 import { Page, Tabbar, Tab, Toolbar } from 'react-onsenui';
 import Card from './Card';
