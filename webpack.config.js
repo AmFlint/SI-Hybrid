@@ -31,6 +31,7 @@ module.exports = {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://0.0.0.0:9000',
     'webpack/hot/only-dev-server',
+    'babel-polyfill',
     './src/index.js'
   ],
   output: {
@@ -61,10 +62,6 @@ module.exports = {
       },
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader'
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
       },
       {
         test: /\.css$/,
