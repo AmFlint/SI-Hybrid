@@ -26,6 +26,7 @@ module.exports = {
   devtool: 'eval-source-map',
   context: __dirname,
   entry: [
+    'babel-polyfill',
     './src/index.js'
   ],
   output: {
