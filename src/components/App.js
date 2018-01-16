@@ -1,3 +1,5 @@
+import React from 'react';
+
 import React, { Component } from 'react';
 import './test.scss'
 import '../styles/main.scss'
