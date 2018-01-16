@@ -8,6 +8,7 @@ import {hello} from "../actions/homeActions";
 import {connect} from "react-redux";
 import BottomBar from "./BottomBar";
 
+
 const renderPage = (route, navigator) => (
   <route.component key={route.key} navigator={navigator} />
 );
@@ -30,6 +31,7 @@ class App extends Component {
           <main style={{margin : 0, padding : 0}}>
             <BottomBar />
           </main>
+
       )
   };
 }
