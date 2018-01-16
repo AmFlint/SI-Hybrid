@@ -6,6 +6,7 @@ import Ons from "react-onsenui";
 import SignUp from '../containers/signUp';
 import { Page, Tabbar, Tab, Toolbar } from 'react-onsenui';
 import Card from './Card';
+import Profil from '../containers/Profil';
 
 class MyTab extends Component {
     render() {
@@ -35,22 +36,22 @@ class BottomBar extends Component {
                 tab: <Tab label="Accueil" icon="md-search" />
             },
             {
-                content: <MyTab content="Welcome home"/>,
-                tab: <Tab label='Home' icon='md-home'/>
-            },
-            {
                 content: <SignUp/>,
                 tab: <Tab label='Sign up' icon='md-settings'/>
             },
             {
                 content: <MyTab content="Rechercher" />,
                 tab: <Tab label="Rechercher" icon="md-search" />
+            },
+            {
+                content: <Profil userName="Gérome" userLevel="Expert" userBio="Je suis un mec cool" userImg="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAqFAAAAJDljMGUxYWExLWU0ZDgtNDU5Zi1iN2RkLThmODU4YjUxODFlMw.jpg"/>,
+                tab: <Tab label='Profile' icon='md-home'/>
             }
         ]
     }
 
     renderToolbar = () => {
-        const titles = ['Accueil', 'Rechercher', 'Histoire', 'Profil'];
+        const titles = ['Accueil', 'Rechercher', 'Histoire', 'Profile'];
         return (
             <Toolbar>
                 <div className='center'>{titles[this.state.index]}</div>

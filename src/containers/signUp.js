@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import Ons from "react-onsenui";
-import {Input, Button} from 'react-onsenui'
+import {Input, Button, Page} from 'react-onsenui'
 
 class signUp extends Component {
     state = {
@@ -39,41 +39,43 @@ class signUp extends Component {
 
     render() {
         return (
-            <form className="submit">
-                <h2 className="submit__title">S'inscrire</h2>
-                <div>
-                    <Input
-                        float
-                        type="text"
-                        modifier="material"
-                        name="username"
-                        placeholder="Username"
-                        onChange={this.handleChange}
-                        className="submit__input"
-                    />
-                </div>
-                <div>
-                    <Input
-                        float
-                        type="password"
-                        modifier="material"
-                        name="password"
-                        placeholder="Password"
-                        onChange={this.handleChange}
-                        className="submit__input"
-                    />
-                </div>
-                <p className="submit__error-message">{this.state.errorMessage}</p>
-                <div>
-                    <Button
-                        float
-                        modifier="material large"
-                        className="submit__button"
-                    >
-                        {this.state.buttonTxt}
-                    </Button>
-                </div>
-            </form>
+            <Page>
+                <form className="submit">
+                    <h2 className="submit__title">S'inscrire</h2>
+                    <div>
+                        <Input
+                            float
+                            type="text"
+                            modifier="material"
+                            name="username"
+                            placeholder="Username"
+                            onChange={this.handleChange}
+                            className="submit__input"
+                        />
+                    </div>
+                    <div>
+                        <Input
+                            float
+                            type="password"
+                            modifier="material"
+                            name="password"
+                            placeholder="Password"
+                            onChange={this.handleChange}
+                            className="submit__input"
+                        />
+                    </div>
+                    <p className="submit__error-message">{this.state.errorMessage}</p>
+                    <div>
+                        <Button
+                            float
+                            modifier="material large"
+                            className="submit__button"
+                        >
+                            {this.state.buttonTxt}
+                        </Button>
+                    </div>
+                </form>
+            </Page>
         )
     };
 }
