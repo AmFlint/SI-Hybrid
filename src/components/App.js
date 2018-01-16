@@ -1,5 +1,5 @@
 import React from 'react';
-import './test.scss'
+import '../styles/main.scss'
 import {
   Navigator
 } from 'react-onsenui';

@@ -24,4 +24,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <hook src="scripts/build.sh" type="before_prepare" />
+    <engine name="android" spec="^7.0.0" />
 </widget>
