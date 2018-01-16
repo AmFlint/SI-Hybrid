@@ -12,6 +12,7 @@ import rootReducer from "./rootReducer";
 
 import ons from 'onsenui';
 import 'onsenui/css/onsenui.css';
+import './styles/main.scss'
 
 const logger = createLogger();
 
