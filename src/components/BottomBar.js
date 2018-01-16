@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+
+import React, { Component } from 'react';
 import {bindActionCreators} from "redux";
 import {hello} from "../actions/homeActions";
 import {connect} from "react-redux";
@@ -7,7 +8,6 @@ import SignUp from '../containers/signUp';
 import { Page, Tabbar, Tab, Toolbar } from 'react-onsenui';
 import Card from './Card';
 import Profil from '../containers/Profil';
-
 class MyTab extends Component {
     render() {
         return (
@@ -26,7 +26,7 @@ class MyTab extends Component {
 class BottomBar extends Component {
 
     state = {
-        index: 0,
+        index : 0,
     };
 
     renderTabs() {
@@ -79,7 +79,6 @@ class BottomBar extends Component {
     };
 }
 
-
 function mapStateToProps(state) {
     return {
         homeMessage: state.home.message
@@ -90,8 +89,9 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
             hello
         }, dispatch
-    )
-}
+
+)}
+
 
 export default connect(
     mapStateToProps,
