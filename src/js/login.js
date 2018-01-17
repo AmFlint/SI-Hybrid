@@ -2,6 +2,7 @@ import '../styles/main.scss'
 import axios from 'axios';
 import { URL } from './config/config'
 import { saveUserToken } from './helpers/auth'
+import { render } from './helpers/redirect'
 
 const form = document.querySelector('.submit__box');
 
@@ -26,7 +27,12 @@ function login(e) {
                 "Access-Control-Allow-Headers": "Content-Type, Authorization"
             }
         })
-        .then((response) => response.status === 200 ? saveUserToken(response.data) : console.log('error'))
+        .then((response) => {
+            if (response.status === 200) {
+                saveUserToken(response.data);
+                render('index');
+            }
+        })
         .catch((err) => console.log(err.message))
     }
 }
