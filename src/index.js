@@ -1,56 +1,46 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
+import App from './App';
+import { Provider } from 'react-redux';
 
-import {Provider} from 'react-redux';
-import {createStore, applyMiddleware, combineReducers} from 'redux';
-import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
-import {AppContainer} from 'react-hot-loader';
 
-import App from './components/App';
-import rootReducer from "./rootReducer";
-
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import { createStore, compose, applyMiddleware } from 'redux';
+import ReduxPromise from 'redux-promise';
+import ReduxThunk from 'redux-thunk';
+import { Router } from 'react-router-dom';
+import reducers from './rootReducer';
+import createHashHistory from 'history/createHashHistory';
 import ons from 'onsenui';
 import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 import './styles/main.scss'
 
-const logger = createLogger();
-
-// TODO Create rootReducer later
-
-const store = createStore(rootReducer,
-  window.devToolsExtension ? window.devToolsExtension() : f => f,
-  process.env.NODE_ENV === 'production'
-    ? applyMiddleware(thunk)
-    : applyMiddleware(thunk, logger)
+const store = createStore(
+    reducers,
+    {},
+    compose(applyMiddleware(ReduxPromise, ReduxThunk)),
 );
 
-const rootElement = document.getElementById('root');
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: 'Helvetica, "sans-serif"',
+        subheading: {
+            fontWeight: 200,
+        },
+    },
+});
+const history = createHashHistory();
+
+
 
 ons.ready(() => render(
-  <AppContainer>
     <Provider store={store}>
-      <App />
-    </Provider>
-  </AppContainer>,
-  rootElement
-));
+        <MuiThemeProvider theme={theme}>
+            <Router history={history}>
+                <App />
+            </Router>
+        </MuiThemeProvider>
+    </Provider>,
 
-if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const NextApp = require('./components/App').default;
-    render(
-      <AppContainer>
-        <Provider store={store}>
-          <NextApp />
-        </Provider>
-      </AppContainer>,
-      rootElement
-    );
-  });
-  module.hot.accept('./rootReducer', () => {
-    const nextReducer = combineReducers(require('./rootReducer')).default;
-    store.replaceReducer(nextReducer);
-  });
-}
+    document.getElementById('root')));
