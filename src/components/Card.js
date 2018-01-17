@@ -27,6 +27,7 @@ export default class Card extends Component {
 
     render() {
         return (
+
             <Page>
                 <article onTouchStart={(e) => this.activeItem(e)} className={this.state.className}>
                     <div className="card-home__img">
