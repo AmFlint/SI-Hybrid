@@ -1,7 +1,7 @@
 import '../styles/main.scss'
 import axios from 'axios';
 import { URL } from './config/config'
-const yay = 'yay'
+import { saveUserToken } from './helpers/auth'
 
 const form = document.querySelector('.submit__box');
 
@@ -26,7 +26,7 @@ function login(e) {
                 "Access-Control-Allow-Headers": "Content-Type, Authorization"
             }
         })
-        .then((response) => response.status === 200 ? saveUserLog(response.data) : console.log('error'))
+        .then((response) => response.status === 200 ? saveUserToken(response.data) : console.log('error'))
         .catch((err) => console.log(err.message))
     }
 }
@@ -38,10 +38,6 @@ function inputIsEmpty() {
 
         return !userName.value.trim() && !password.value.trim()
     }
-}
-
-function saveUserLog(value) {
-    window.localStorage.setItem('logAuth', JSON.stringify(value.token))
 }
 
 
