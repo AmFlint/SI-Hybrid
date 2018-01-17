@@ -15,8 +15,8 @@ const cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
   entry: {
-    'index': './src/js/index.js'
-    // 'page2': './src/js/page2.js'
+    'index': './src/js/index.js',
+    'page2': './src/js/page2.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
   output: {
