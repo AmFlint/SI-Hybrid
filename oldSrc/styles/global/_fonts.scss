@@ -1,7 +1,7 @@
 // Fonts
 
 $Roboto : 'Roboto', 'arial' , 'sans-serif';
-$font-normal : $Roboto;
+$font-normal : 'Roboto', 'arial' , 'sans-serif';
 
 @mixin font-size($sizeValue) {
   font-size: ($sizeValue * 10) + px;

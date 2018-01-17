@@ -1,3 +1,8 @@
+$font-normal : 'Roboto', 'arial' , 'sans-serif';
+@mixin font-size($sizeValue) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: ($sizeValue/1.6) + rem;
+}
 .submit {
   margin: 0 auto;
   background-color: white;
@@ -16,7 +21,6 @@
     color: #1254BA;
   }
   &__title {
-    @include font-size(3);
     color: white;
     font-family: $font-normal;
     margin: 10vh auto 10vh 20px !important;
