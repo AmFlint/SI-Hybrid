@@ -9,6 +9,9 @@
   .mdl-distance {
     float: right;
   }
+  &__title-text {
+    font-weight: bold;
+  }
 }
 
 .demo-card-square > .mdl-card__title {
