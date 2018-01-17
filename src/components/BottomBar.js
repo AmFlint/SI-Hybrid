@@ -45,13 +45,13 @@ class BottomBar extends Component {
             },
             {
                 content: <Profil userName="Gérome" userLevel="Expert" userBio="Je suis un mec cool" userImg="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAqFAAAAJDljMGUxYWExLWU0ZDgtNDU5Zi1iN2RkLThmODU4YjUxODFlMw.jpg"/>,
-                tab: <Tab label='Profile' icon='md-home'/>
+                tab: <Tab label='Profil' icon='md-home'/>
             }
         ]
     }
 
     renderToolbar = () => {
-        const titles = ['Accueil', 'Rechercher', 'Histoire', 'Profile'];
+        const titles = ['Accueil', 'Rechercher', 'Histoire', 'Profil'];
         return (
             <Toolbar>
                 <div className='center'>{titles[this.state.index]}</div>

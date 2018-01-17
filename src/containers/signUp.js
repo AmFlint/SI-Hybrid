@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
+
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import Ons from "react-onsenui";
 import {Input, Button, Page} from 'react-onsenui'
+
+const responseFacebook = (response) => {
+    console.log(response);
+}
 
 class signUp extends Component {
     state = {
@@ -75,6 +80,7 @@ class signUp extends Component {
                         </Button>
                     </div>
                 </form>
+
             </Page>
         )
     };
