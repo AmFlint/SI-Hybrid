@@ -1,13 +1,9 @@
-<div>
-    <article class="card-home">
-        <div class="card-home__img">
-            <h2 class="card-home__title"><p>découvert de La Chambre d'Antoine</p></h2>
-            <img src={this.props.placeImg}/>
-        </div>
-        <div className="card-home__article">
-            <p className="card-home__article__lvl">{this.props.placeLevel}</p>
-            <h2 className="card-home__article__title">{this.props.placeName}</h2>
-            <p className="card-home__article__desc">{this.props.placeDescription}</p>
-        </div>
-    </article>
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">La Tour Eiffel</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <span class="mdl-level">Difficulté : débutant</span><span class="mdl-distance">2,6 Km</span>
+    <p>Ceci est la description du lieu c'est un texte un peu plus long que les autre itoo </p>
+  </div>
 </div>
