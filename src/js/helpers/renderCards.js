@@ -1,5 +1,4 @@
 export function renderCards(cards) {
-    console.log(cards);
     if (cards) {
         return cards.map((card) => {
             const stars = createStarts(card.difficulty);
@@ -24,6 +23,8 @@ export function renderCards(cards) {
             `
             )
         })
+    } else {
+        // TODO: Render empty state if no cards.
     }
 }
 

@@ -5,9 +5,16 @@ import {URL} from './config/config'
 import {getUserToken} from './helpers/auth'
 import {renderCards} from './helpers/renderCards'
 import {saveCardId} from './helpers/auth'
+import { redirectTo } from './helpers/redirect';
 
 let cards = [];
 const searchValue = '';
+  
+const floatingBtn = document.querySelector('.floating--button');
+
+floatingBtn.addEventListener('click', function() {
+    redirectTo('article');
+});
 
 window.addEventListener('load', async function () {
     const listCards = document.querySelector('#listCards');

@@ -40,11 +40,22 @@
       margin-top: 10px;;
     }
     &__input {
-      width: 100%;
+      width: 75%;
       padding-bottom: 5px;
       background-color: transparent;
       border: none;
       border-bottom: 1px solid $grey;
     }
+  }
+
+  .test-gerome {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #search_submit {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
   }
 }
