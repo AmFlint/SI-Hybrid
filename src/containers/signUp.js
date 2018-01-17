@@ -4,6 +4,7 @@ import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import Ons from "react-onsenui";
 import {Input, Button, Page} from 'react-onsenui'
+import {Link} from "react-router-dom";
 
 const responseFacebook = (response) => {
     console.log(response);
@@ -81,6 +82,7 @@ class signUp extends Component {
                     </div>
                 </form>
 
+                <Link to="/auth/login">Connectez vous</Link>
             </Page>
         )
     };
