@@ -30,7 +30,7 @@ function login(e) {
         .then((response) => {
             if (response.status === 200) {
                 saveUserToken(response.data);
-                redirectTo('index')
+                redirectTo('home')
             }
         })
         .catch((err) => console.log(err.message))
