@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+</head>
+<body>
+<div class="submit">
+    <h2 class="submit__title">Vous nous <span>rejoignez ?</span></h2>
+    <form class="submit__box submit__box--shadow">
+        <div class="submit__input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input submit__input__content" type="mail" id="email" name="email">
+            <label class="mdl-textfield__label" for="email">Mail</label>
+        </div>
+        <div class="submit__input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input submit__input__content" type="text" id="username" name="username">
+            <label class="mdl-textfield__label" for="email">Username</label>
+        </div>
+        <div class="submit__input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input submit__input__content" type="password" id="password" name="password">
+            <label class="mdl-textfield__label" for="password">Password</label>
+        </div>
+        <div class="submit__input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input submit__input__content" type="password" id="password-verification" name="password-verification">
+            <label class="mdl-textfield__label" for="password-verification">Password Verification</label>
+        </div>
+        <!-- Error message -->
+        <!--<p class="submit__box__error-message">{this.state.errorMessage}</p>-->
+        <div class="submit__button">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Entrer dans le groupe
+            </button>
+        </div>
+        <div class="submit__box__mdp">
+            <a href="">Mot de passe oublié ?</a>
+        </div>
+    </form>
+    <div class="submit__box__inscription">Pas encore inscrit ? <a href="page2.html">Sign Up !</a></div>
+</div>
+
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+</html>

@@ -16,7 +16,7 @@ const webpackPlugins = [
   new CleanWebpackPlugin(['www']),
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'src/index.html'
+    template: 'oldSrc/index.pug'
   }),
   new UglifyJsPlugin(),
   new ExtractTextPlugin("styles.css")
@@ -27,7 +27,7 @@ module.exports = {
   context: __dirname,
   entry: [
     'babel-polyfill',
-    './src/index.js'
+    './oldSrc/index.js'
   ],
   output: {
     path: path.resolve(__dirname, 'www'),
