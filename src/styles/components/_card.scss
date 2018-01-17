@@ -1,12 +1,106 @@
-.card {
-  &__img {
+.card-home {
+  width: 95%;
+  height: 150px;
+  margin: 10px auto 0 2.5%;
+  position: relative;
+  box-shadow: none;
+  border-radius: 0px;
+  padding: 0px;
+  transition: 0.8s $easeInOutCubic;
+  &--inactive {
+    opacity: 0;
+  }
+  &--active {
     width: 100%;
+    height: 170px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+  }
+  &--active & {
+    &__article {
+      transform: translateY(-10%);
+      opacity: 1;
+    }
+    &__img {
+      height: 170px;
+      img {
+        filter: grayscale(100%);
+      }
+    }
+    &__title {
+      opacity: 0;
+    }
+  }
+  &__title {
+    font-family: $font-normal;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    margin: 0px !important;
+    transform: translate(-50%, -50%);
+    @include font-size(2);
+    line-height: 130%;
+    transition: (0.4s $easeInOutCubic);
+    p {
+      font-family: $font-normal;
+      font-weight: 300;
+      color: white;
+      line-height: 130%;
+      @include font-size(1);
+    }
   }
   &__article {
-    margin: 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    align-items: center;
+    opacity: 0;
+    width: calc(93% - 40px);
+    transform: translateY(100px);
+    transition: 1s $easeInOutCubic;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    &__lvl {
+      font-weight: 300;
+      @include font-size(1);
+      color: $grey;
+      font-family: $font-normal;
+      line-height: 140%;
+    }
+    &__title {
+      font-family: $font-normal;
+      font-weight: 700;
+      color: $grey;
+      margin-top: 0px !important;
+      @include font-size(1.4);
+      line-height: 130%;
+    }
+    &__desc {
+      @include font-size(1.2);
+      line-height: 130%;
+      font-family: $font-normal;
+      font-weight: 400;
+      color: $grey;
+    }
   }
-  &__article--infos {
-    padding: 5px;
+  &__img {
+    width: 100%;
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    transition: 0.8s $easeInOutCubic;
+    img {
+      filter: grayscale(100%);
+      transition: 0.4s $easeInOutCubic;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
