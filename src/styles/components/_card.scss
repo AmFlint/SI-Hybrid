@@ -56,6 +56,12 @@
   margin: 0 auto;
   padding-bottom: 75px;
   padding-top : 50px;
+  #goBack{
+    position: absolute;
+    i:before{
+      @include font-size(3);
+    }
+  }
 }
 .mdl-level {
   font-family: $font-normal;
