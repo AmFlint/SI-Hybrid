@@ -7,7 +7,7 @@ import { redirectTo } from './helpers/redirect';
 const form = document.querySelector('.submit__box');
 
 if (getUserToken()) {
-    redirectTo('add-card');
+    redirectTo('home');
 }
 
 form.addEventListener( 'submit' , signUp )
