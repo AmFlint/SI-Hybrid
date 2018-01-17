@@ -1,39 +1,32 @@
 import React, {Component} from 'react';
 import {Page} from 'react-onsenui'
 
-var MyPage = React.createClass({
-    getInitialState: function() {
-        return {
-            items: [
-                '#F1948A',
-                '#D7BDE2',
-                '#85C1E9',
-                '#73C6B6',
-            ],
-            index: 0
-        };
-    },
+
+export default class Card extends Component {
+
+    state = {
+        items: [
+            '#F1948A',
+            '#D7BDE2',
+            '#85C1E9',
+            '#73C6B6',
+        ],
+        index: 0
+    };
 
     handleChange(e) {
         this.setState({index: e.activeIndex});
-    },
-
-    renderToolbar() {
-        return (
-            <Ons.Toolbar>
-                <div className='center'>Carousel</div>
-            </Ons.Toolbar>
-        );
-    },
+    };
 
     setIndex(index) {
         this.setState({index: index});
-    },
+    };
 
-    render: function() {
+    render() {
         return (
-            <Ons.Page renderToolbar={this.renderToolbar}>
-                <Ons.Carousel onPostChange={this.handleChange} index={this.state.index} fullscreen swipeable autoScroll overscrollable>
+            <Page>
+                <Ons.Carousel onPostChange={this.handleChange} index={this.state.index} fullscreen swipeable
+                              autoScroll overscrollable>
                     {this.state.items.map((item, index) => (
                         <Ons.CarouselItem key={index} style={{backgroundColor: item}}>
                             <div style={{marginTop: '50%', textAlign: 'center'}}>
@@ -57,7 +50,7 @@ var MyPage = React.createClass({
             </span>
                     ))}
                 </div>
-            </Ons.Page>
+            </Page>
         );
     }
-});
+};
