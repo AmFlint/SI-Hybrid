@@ -2,7 +2,7 @@ import '../styles/main.scss'
 import axios from 'axios';
 import { URL } from './config/config'
 import { saveUserToken } from './helpers/auth'
-import { render } from './helpers/redirect'
+import { redirectTo } from './helpers/redirect.js'
 
 const form = document.querySelector('.submit__box');
 
@@ -30,7 +30,7 @@ function login(e) {
         .then((response) => {
             if (response.status === 200) {
                 saveUserToken(response.data);
-                render('index');
+                redirectTo('index')
             }
         })
         .catch((err) => console.log(err.message))
