@@ -20,6 +20,7 @@ module.exports = {
     'home': './src/js/home.js',
     'login': './src/js/login.js',
     'discover': './src/js/discover.js',
+    'add-card': './src/js/add-card.js'
     'detailsCard' : './src/js/detailsCard.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
@@ -105,6 +106,12 @@ module.exports = {
       template: './src/pages/discover.pug',
       filename: 'discover.html',
       chunks: ['discover']
+    }),
+    new HtmlWebpackPlugin({
+        title: "Ajouter un urbex",
+        template: './src/pages/add-card.pug',
+        filename: 'add-card.html',
+        chunks: ['add-card']
     }),
     new ExtractTextPlugin({
       filename: 'styles.css',

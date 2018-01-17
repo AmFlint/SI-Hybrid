@@ -1,0 +1,27 @@
+.add__card {
+  h3 {
+    color: rgba(0,0,0,.26);
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 17px;
+  }
+  .add__card--rate {
+    i {
+      font-size: 44px;
+      color: rgba(0, 0, 0, 0.26);
+    }
+    i.active {
+      &:before {
+        color: red;
+      }
+    }
+  }
+  .submit {
+    .submit__title {
+      color: black;
+    }
+    &:before {
+      display: none;
+    }
+  }
+}
