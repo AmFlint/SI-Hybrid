@@ -1,22 +1,23 @@
 import '../styles/main.scss'
-import { getCards, getCard } from './card'
+import {getCards, getCard} from './card'
 import axios from 'axios';
-import { URL } from './config/config'
-import { getUserToken } from './helpers/auth'
-import { renderCards } from './helpers/renderCards'
-import { saveCardId } from './helpers/auth'
+import {URL} from './config/config'
+import {getUserToken} from './helpers/auth'
+import {renderCards} from './helpers/renderCards'
+import {saveCardId} from './helpers/auth'
+
 let cards = [];
 const searchValue = '';
 
-window.addEventListener('load', async function() {
+window.addEventListener('load', async function () {
     const listCards = document.querySelector('#listCards');
     cards = await getCards()
     listCards.innerHTML = renderCards(cards)
     const Cards = document.querySelectorAll('.Cards');
-    for(var i = 0; i < Cards.length; i++) {
-        Cards[i].addEventListener('click', detailsCard)
+    for (var i = 0; i < Cards.length; i++) {
+        Cards[i].addEventListener('click', detailsCard);
     }
-})
+});
 
 function goBack(cards) {
     const listCards = document.querySelector('#listCards');
@@ -38,7 +39,7 @@ for (let i = 0; i < items.length; i++) {
         for (let j = 0; j < items.length; j++) {
             items[j].classList.remove('items-tab-bar--active');
         }
-        if (!this.classList.contains('items-tab-bar--active')){
+        if (!this.classList.contains('items-tab-bar--active')) {
             this.classList.add('items-tab-bar--active');
         }
     });
@@ -68,14 +69,14 @@ closeSearchIcon.addEventListener('click', function () {
 
 closeSearchIcon.addEventListener('click', closeSearchTab);
 
-buttonSearch.addEventListener('click', async function() {
+buttonSearch.addEventListener('click', async function () {
     let search = searchInput.value;
     if (search.trim() !== '') {
         const searchQuery = '?search=' + search;
         cards = await getCards(searchQuery);
         listCards.innerHTML = renderCards(cards);
         const Cards = document.querySelectorAll('.Cards');
-        for(var i = 0; i < Cards.length; i++) {
+        for (var i = 0; i < Cards.length; i++) {
             Cards[i].addEventListener('click', detailsCard)
         }
         searchInput.value = '';
@@ -84,15 +85,15 @@ buttonSearch.addEventListener('click', async function() {
 });
 
 
-
 async function detailsCard() {
-    const card = await getCard(this.dataset.id)
+    const card = await getCard(this.dataset.id);
     listCards.innerHTML = '';
     window.scrollTo(0, 0);
     listCards.innerHTML = `
+    <div class="one-card">
     <header class="article__header">
     <h1>${ card.title }</h1>
-    <div id="goBack">RETOUR</div>
+    <div id="goBack"><i class="icon-chevron_left_24px"></i></div>
 </header>
 <main class="article">
     <section class="article__carousel">
@@ -119,20 +120,19 @@ async function detailsCard() {
     <section class="article__map">
         <div id="map"></div>
     </section>
+    </div>
     `;
 
     const backButton = document.querySelector('#goBack');
 
-if (backButton) {
-    backButton.addEventListener('click', async function() {
-        listCards.innerHTML = '';
-
-        listCards.innerHTML = renderCards(cards)
-        const Cards = document.querySelectorAll('.Cards');
-        for(var i = 0; i < Cards.length; i++) {
-            Cards[i].addEventListener('click', detailsCard)
-        }
-    })
+    if (backButton) {
+        backButton.addEventListener('click', async function () {
+            listCards.innerHTML = '';
+            listCards.innerHTML = renderCards(cards);
+            const Cards = document.querySelectorAll('.Cards');
+            for (var i = 0; i < Cards.length; i++) {
+                Cards[i].addEventListener('click', detailsCard);
+            }
+        })
+    }
 }
-}
-
