@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { URL } from './config/config'
 import { getUserToken } from './helpers/auth';
-function getCards() {
+
+export function getCards() {
         axios({
             url : URL + '/posts',
             method : 'GET',
@@ -9,7 +10,7 @@ function getCards() {
                 "X-Access-Token" : getUserToken()
             }
         })
-
+        .then((response) => console.log(response, '???'))
 }
 
 

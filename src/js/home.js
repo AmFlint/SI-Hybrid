@@ -1,5 +1,6 @@
 import '../styles/main.scss'
-
+import { getCards } from './card'
+getCards();
 
 //js for tab
 let items = document.querySelectorAll('.tabBar__list__item'),
