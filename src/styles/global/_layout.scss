@@ -8,6 +8,10 @@ $min-small-width : "only screen and (min-width:#{$s-width})";
 $min-medium-width : "only screen and (min-width:#{$m-width})";
 $min-large-width : "only screen and (min-width:#{$l-width})";
 
+body{
+  min-height: 100vh;
+}
+
 /*
 include in your content like this
 

@@ -9,7 +9,7 @@
     height: 45vh;
     position: absolute;
     z-index: -1;
-    background: linear-gradient(to bottom, #313850 0%,#23283A 100%);
+    background: linear-gradient(to bottom, #313850 0%, #23283A 100%);
   }
   a {
     text-decoration: none;
@@ -50,8 +50,9 @@
       font-weight: 400;
       margin-top: 50px;
       text-align: center;
+      font-family: $font-normal;
       display: block;
-      span {
+      a {
         font-weight: 700;
         color: black;
       }
@@ -59,7 +60,10 @@
   }
   &__input {
     width: 100%;
-    margin-top: 5px;
+    margin-top: -10px;
+    &:last-of-type {
+      margin-top: -20px;
+    }
     &:first-of-type {
       margin-top: 0;
     }
@@ -69,11 +73,11 @@
       @include font-size(1.6);
       font-weight: 700;
       display: block !important;
-      margin-top: 20px;
     }
   }
   &__button {
-    & > ons-button {
+    & > button {
+      width: 100%;
       background-color: $main-color;
     }
     padding: 5px;
