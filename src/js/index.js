@@ -1,10 +1,14 @@
 import '../styles/main.scss'
 import axios from 'axios';
 import { URL } from './config/config'
-import { saveUserToken } from './helpers/auth'
+import { saveUserToken, getUserToken } from './helpers/auth'
 import { redirectTo } from './helpers/redirect';
 
 const form = document.querySelector('.submit__box');
+
+if (getUserToken()) {
+    redirectTo('home');
+}
 
 form.addEventListener( 'submit' , signUp )
 

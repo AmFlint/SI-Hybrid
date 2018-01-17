@@ -18,7 +18,9 @@ module.exports = {
     'index': './src/js/index.js',
     'article': './src/js/article.js',
     'home': './src/js/home.js',
-    'login': './src/js/login.js'
+    'login': './src/js/login.js',
+    'discover': './src/js/discover.js',
+    'detailsCard' : './src/js/detailsCard.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
   output: {
@@ -87,10 +89,22 @@ module.exports = {
       chunks: ['home']
     }),
     new HtmlWebpackPlugin({
+      title: 'Details Card',
+      template: './src/pages/detailsCard.pug',
+      filename: 'detailsCard.html',
+      chunks: ['detailsCard']
+    }),
+    new HtmlWebpackPlugin({
       title: 'Login',
       template: './src/pages/login.pug',
       filename: 'login.html',
       chunks: ['login']
+    }),
+    new HtmlWebpackPlugin({
+      title: "Le coup de coeur de l'équipe",
+      template: './src/pages/discover.pug',
+      filename: 'discover.html',
+      chunks: ['discover']
     }),
     new ExtractTextPlugin({
       filename: 'styles.css',
