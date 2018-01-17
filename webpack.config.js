@@ -18,7 +18,8 @@ module.exports = {
     'index': './src/js/index.js',
     'article': './src/js/article.js',
     'home': './src/js/home.js',
-    'login': './src/js/login.js'
+    'login': './src/js/login.js',
+    'discover': './src/js/discover.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
   output: {
@@ -91,6 +92,12 @@ module.exports = {
       template: './src/pages/login.pug',
       filename: 'login.html',
       chunks: ['login']
+    }),
+    new HtmlWebpackPlugin({
+      title: "Le coup de coeur de l'équipe",
+      template: './src/pages/discover.pug',
+      filename: 'discover.html',
+      chunks: ['discover']
     }),
     new ExtractTextPlugin({
       filename: 'styles.css',
