@@ -3,20 +3,62 @@
   width: 100%;
   margin: 0 auto;
   box-shadow: none;
-
+  &__supporting-text {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 12px;
+    justify-content: space-between;
+    &--left{
+      display: flex;
+    }
+  }
   .mdl-level {
-    font-weight: bold;
-    margin-left: 10px;
+    font-weight: 400;
+    display: flex;
+    font-family: $font-normal;
+    @include font-size(1.5);
+    color: #1f1f21;
   }
   .mdl-distance {
     float: right;
+    color: #1f1f21;
+    font-family: $font-normal;
+    @include font-size(1.5);
+    span {
+      font-weight: 700;
+    }
   }
   &__title {
     height: 190px;
   }
   &__title-text {
+    width: 100%;
+    margin-bottom: 8px;
     font-weight: bold;
+    font-family: $font-normal;
+    @include font-size(2);
+    color: #1f1f21;
   }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+    &__item {
+      span:before {
+        color: #1f1f21;
+        @include font-size(1.5);
+      }
+    }
+  }
+}
+#listCards {
+  width: 95%;
+  margin: 0 auto;
+}
+.mdl-level {
+  font-family: $font-normal;
+  color: #1f1f21;
+  @include font-size(1.2);
 }
 
 .demo-card-square > .mdl-card__title {

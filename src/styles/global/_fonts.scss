@@ -1,21 +1,10 @@
-// Fonts
-
-$Roboto : 'Roboto', 'arial' , 'sans-serif';
-$font-normal : $Roboto;
-
-@mixin font-size($sizeValue) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: ($sizeValue/1.6) + rem;
-}
-
-
 @font-face {
   font-family: 'icomoon';
-  src:  url('./fonts/icomoon.eot?353htf');
-  src:  url('./fonts/icomoon.eot?353htf#iefix') format('embedded-opentype'),
-  url('./fonts/icomoon.ttf?353htf') format('truetype'),
-  url('./fonts/icomoon.woff?353htf') format('woff'),
-  url('./fonts/icomoon.svg?353htf#icomoon') format('svg');
+  src:  url('./fonts/icomoon.eot?ovh31m');
+  src:  url('./fonts/icomoon.eot?ovh31m#iefix') format('embedded-opentype'),
+  url(';/fonts/icomoon.ttf?ovh31m') format('truetype'),
+  url('./fonts/icomoon.woff?ovh31m') format('woff'),
+  url('./fonts/icomoon.svg?ovh31m#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -50,33 +39,36 @@ $font-normal : $Roboto;
 .icon-facebook:before {
   content: "\e904";
 }
-.icon-home_24px:before {
+.icon-flashlight:before {
   content: "\e905";
 }
-.icon-lock_24px:before {
+.icon-home_24px:before {
   content: "\e906";
 }
-.icon-place_24px:before {
+.icon-lock_24px:before {
   content: "\e907";
 }
-.icon-search_24px:before {
+.icon-place_24px:before {
   content: "\e908";
 }
-.icon-sentiment_very_dissatisfied_24px:before {
+.icon-search_24px:before {
   content: "\e909";
 }
-.icon-sentiment_very_satisfied_24px:before {
+.icon-sentiment_very_dissatisfied_24px:before {
   content: "\e90a";
 }
-.icon-share_24px:before {
+.icon-sentiment_very_satisfied_24px:before {
   content: "\e90b";
 }
-.icon-star_rate_18px:before {
+.icon-share_24px:before {
   content: "\e90c";
 }
-.icon-user_24px:before {
+.icon-star_rate_18px:before {
   content: "\e90d";
 }
-.icon-warning_24px:before {
+.icon-user_24px:before {
   content: "\e90e";
+}
+.icon-warning_24px:before {
+  content: "\e90f";
 }

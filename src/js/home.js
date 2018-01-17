@@ -5,9 +5,9 @@ import { renderCards } from './helpers/renderCards'
 
 window.addEventListener('load', async function() {
     const listCards = document.querySelector('#listCards');
-    const cards = await getCards()
-    listCards.innerHTML = renderCards(cards)
-})
+    const cards = await getCards();
+    listCards.innerHTML = renderCards(cards);
+});
 
 //js for tab
 let items = document.querySelectorAll('.tabBar__list__item'),
