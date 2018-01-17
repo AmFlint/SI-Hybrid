@@ -13,4 +13,15 @@ export async function getCards() {
         return req.data
 }
 
+export async function getCard(id) {
+    const req = await axios({
+        url : URL + '/posts/' + id,
+        method : 'GET',
+        headers : {
+            "X-Access-Token" : getUserToken()
+        }
+    })
+    return req.data
+}
+
 

@@ -19,7 +19,8 @@ module.exports = {
     'article': './src/js/article.js',
     'home': './src/js/home.js',
     'login': './src/js/login.js',
-    'discover': './src/js/discover.js'
+    'discover': './src/js/discover.js',
+    'detailsCard' : './src/js/detailsCard.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
   output: {
@@ -86,6 +87,12 @@ module.exports = {
       template: './src/pages/home.pug',
       filename: 'home.html',
       chunks: ['home']
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Details Card',
+      template: './src/pages/detailsCard.pug',
+      filename: 'detailsCard.html',
+      chunks: ['detailsCard']
     }),
     new HtmlWebpackPlugin({
       title: 'Login',
