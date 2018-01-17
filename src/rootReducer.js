@@ -1,9 +1,10 @@
-import {combineReducers} from "redux";
+import { combineReducers } from 'redux';
 
-import home from './reducers/homeReducers'
+import auth from './reducers/authReducers';
+
 
 const rootReducer = combineReducers({
-    home, // shorthand for lists: lists
+    auth,
 });
 
 export default rootReducer;

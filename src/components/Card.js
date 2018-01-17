@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Page } from 'react-onsenui'
 
 export default class Card extends Component {
 
     render() {
         return (
-            <Page>
+            <section>
                 <article className="card__article">
                     <img src={this.props.placeImg} className="card__img"/>
                     <div className="card__article--infos">
@@ -14,7 +13,7 @@ export default class Card extends Component {
                         <p>{this.props.placeDescription}</p>
                     </div>
                 </article>
-            </Page>
+            </section>
         )
     }
 }
