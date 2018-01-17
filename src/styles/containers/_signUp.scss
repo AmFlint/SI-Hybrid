@@ -1,0 +1,86 @@
+.submit {
+  margin: 0 auto;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 45vh;
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(to bottom, #313850 0%,#23283A 100%);
+  }
+  a {
+    text-decoration: none;
+    color: #1254BA;
+  }
+  &__title {
+    @include font-size(3);
+    color: white;
+    font-family: $font-normal;
+    margin: 10vh auto 10vh 20px !important;
+    display: inline-block;
+    font-weight: 300 !important;
+    & > span {
+      font-weight: 700;
+      color: $main-color;
+    }
+  }
+  &__box {
+    text-align: center;
+    font-family: $font-normal;
+    padding: 20px 20px 40px 20px;
+    width: calc(90% - 40px);
+    position: relative;
+    background-color: white;
+    margin: 0 auto;
+    &--shadow {
+      -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .09);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, .09);
+    }
+    &__mdp {
+      padding-bottom: 15px;
+      color: $main-color;
+      text-align: left;
+      margin-top: 20px;
+      @include font-size(1.2);
+    }
+    &__inscription {
+      font-weight: 400;
+      margin-top: 50px;
+      text-align: center;
+      display: block;
+      span {
+        font-weight: 700;
+        color: black;
+      }
+    }
+  }
+  &__input {
+    width: 100%;
+    margin-top: 5px;
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &__content {
+      width: 100%;
+      position: relative;
+      @include font-size(1.6);
+      font-weight: 700;
+      display: block !important;
+      margin-top: 20px;
+    }
+  }
+  &__button {
+    & > ons-button {
+      background-color: $main-color;
+    }
+    padding: 5px;
+    width: 80%;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
