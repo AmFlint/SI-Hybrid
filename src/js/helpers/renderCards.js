@@ -5,7 +5,7 @@ export function renderCards(cards) {
             const stars = createStarts(card.difficulty);
             return (
                 `
-            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+            <div class="demo-card-square mdl-card mdl-shadow--2dp Cards" data-id="${card.id}">
               <div class="mdl-card__title mdl-card--expand"></div>
               <div class="mdl-card__supporting-text">
               <h2 class="mdl-card__title-text">${card.title}</h2>

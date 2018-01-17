@@ -5,7 +5,9 @@ import { URL } from './config/config'
 import { getUserToken } from './helpers/auth'
 import { renderCards } from './helpers/renderCards'
 import { saveCardId } from './helpers/auth'
-let cards = []
+let cards = [];
+const searchValue = '';
+
 window.addEventListener('load', async function() {
     const listCards = document.querySelector('#listCards');
     cards = await getCards()
@@ -64,23 +66,29 @@ closeSearchIcon.addEventListener('click', function () {
     menuSearch.classList.add('search--inactive');
 });
 
+closeSearchIcon.addEventListener('click', closeSearchTab);
 
-
-
-
-
-
-
-
-
-
+buttonSearch.addEventListener('click', async function() {
+    let search = searchInput.value;
+    if (search.trim() !== '') {
+        const searchQuery = '?search=' + search;
+        cards = await getCards(searchQuery);
+        listCards.innerHTML = renderCards(cards);
+        const Cards = document.querySelectorAll('.Cards');
+        for(var i = 0; i < Cards.length; i++) {
+            Cards[i].addEventListener('click', detailsCard)
+        }
+        searchInput.value = '';
+        closeSearchTab();
+    }
+});
 
 
 
 async function detailsCard() {
     const card = await getCard(this.dataset.id)
     listCards.innerHTML = '';
-
+    window.scrollTo(0, 0);
     listCards.innerHTML = `
     <header class="article__header">
     <h1>${ card.title }</h1>
@@ -117,7 +125,6 @@ async function detailsCard() {
 
 if (backButton) {
     backButton.addEventListener('click', async function() {
-        console.log('yay')
         listCards.innerHTML = '';
 
         listCards.innerHTML = renderCards(cards)
@@ -128,15 +135,4 @@ if (backButton) {
     })
 }
 }
-closeSearchIcon.addEventListener('click', closeSearchTab);
 
-buttonSearch.addEventListener('click', async function() {
-    let search = searchInput.value;
-    if (search.trim() !== '') {
-        const searchQuery = '?search=' + search;
-        const cards = await getCards(searchQuery);
-        listCards.innerHTML = renderCards(cards);
-        searchInput.value = '';
-        closeSearchTab();
-    }
-});
