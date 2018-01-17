@@ -1,4 +1,5 @@
-export function render(path) {
-    console.log('yay')
-        window.location.assign('http://localhost:3000/' + path + '.html')   
+import { host } from "../config/config";
+
+export function redirectTo(path) {
+        window.location.assign(host + path + '.html')   
 }
