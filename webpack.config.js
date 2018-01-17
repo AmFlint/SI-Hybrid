@@ -15,8 +15,8 @@ const cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
   entry: {
-    'index': './src/js/index.js'
-    // 'page2': './src/js/page2.js'
+    'index': './src/js/index.js',
+    'article': './src/js/article.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
   output: {
@@ -59,7 +59,7 @@ module.exports = {
     ]
   },
   devServer: {
-    port: 3000,
+    port: 9000,
     contentBase: path.join(__dirname, 'www'),
     compress: true,
     hot: true,
@@ -72,12 +72,12 @@ module.exports = {
       template: './src/pages/index.pug',
       chunks: ['index']
     }),
-    new HtmlWebpackPlugin({
-      title: 'Page 2',
-      template: './src/pages/page2.pug',
-      filename: 'page2.html',
-      chunks: ['page2']
-    }),
+      new HtmlWebpackPlugin({
+          title: 'article',
+          template: './src/pages/article.pug',
+          filename: 'article.html',
+          chunks: ['article']
+      }),
     new ExtractTextPlugin({
       filename: 'styles.css',
       disable: !isProd,
