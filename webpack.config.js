@@ -20,7 +20,7 @@ module.exports = {
     'home': './src/js/home.js',
     'login': './src/js/login.js',
     'discover': './src/js/discover.js',
-    'add-card': './src/js/add-card.js'
+    'add-card': './src/js/add-card.js',
     'detailsCard' : './src/js/detailsCard.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
