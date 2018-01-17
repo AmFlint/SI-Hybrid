@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import Ons from "react-onsenui";
-import {Input, Button} from 'react-onsenui'
+import {Input, Button, Page} from 'react-onsenui'
+import {Link} from "react-router-dom";
 
 class signUp extends Component {
     state = {
