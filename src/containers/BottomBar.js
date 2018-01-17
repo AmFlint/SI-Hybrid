@@ -46,4 +46,7 @@ class BottomBar extends React.Component {
     }
 }
 
-export default withRouter(withStyles(styles)(BottomBar));
+export default withRouter(
+    withStyles(styles)
+    (BottomBar)
+);
