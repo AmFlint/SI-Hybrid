@@ -1,13 +1,18 @@
 .mdl-card {
   font-family: $font-normal;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
+  box-shadow: none;
 
   .mdl-level {
     font-weight: bold;
+    margin-left: 10px;
   }
   .mdl-distance {
     float: right;
+  }
+  &__title {
+    height: 190px;
   }
   &__title-text {
     font-weight: bold;
@@ -17,4 +22,5 @@
 .demo-card-square > .mdl-card__title {
   color: #fff;
   background: url('../assets/images/thumbnail.png') 15% no-repeat #46B6AC;
+  background-size: cover;
 }
