@@ -108,7 +108,7 @@ class signUp extends Component {
                         <a href="">Mot de passe oublié ?</a>
                     </div>
                 </form>
-                <a className="submit__box__inscription" href="">Pas encore inscrit ? <span>Sign Up !</span></a>
+                <Link className="submit__box__inscription" to={"/auth/login"}>Pas encore inscrit ? <span>Sign Up !</span></Link>
             </div>
         )
     };
