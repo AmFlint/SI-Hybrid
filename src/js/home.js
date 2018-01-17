@@ -1,5 +1,6 @@
 import '../styles/main.scss'
 import { getCards } from './card'
+getCards();
 import { renderCards } from './helpers/renderCards'
 
 window.addEventListener('load', async function() {
@@ -33,14 +34,14 @@ for (let i = 0; i < items.length; i++) {
 //js for search
 
 let searchIcon = document.querySelector('.header__search__icon'),
-    closeSearchIcon = document.querySelector('.search__bar'),
+    closeSearchIcon = document.querySelector('.search__bar__icon'),
     menuSearch = document.querySelector('.search');
 
 searchIcon.addEventListener('click', function () {
-    console.log('yop');
+    menuSearch.classList.remove('search--inactive');
     menuSearch.classList.add('search--active');
 });
 closeSearchIcon.addEventListener('click', function () {
     menuSearch.classList.remove('search--active');
+    menuSearch.classList.add('search--inactive');
 });
-
