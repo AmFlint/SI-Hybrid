@@ -1,0 +1,28 @@
+.discover {
+  section {
+    padding: 17px 0;
+    border-bottom: 1px solid rgb(230, 230, 230);
+  }
+  section p,
+  section h3 {
+    padding: 0 17px;
+  }
+  section h3 {
+    color: rgb(96, 96, 96);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 17px;
+  }
+  .discover__header {
+    background: rgb(64, 64, 64);
+    color: white;
+    padding: 17px;
+    h2 {
+      font-size: 24px;
+      margin-bottom: 7px;
+    }
+    p {
+      padding: 0;
+    }
+  }
+}
