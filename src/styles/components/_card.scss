@@ -18,3 +18,9 @@
     font-weight: bold;
   }
 }
+
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background: url('../assets/images/thumbnail.png') 15% no-repeat #46B6AC;
+  background-size: cover;
+}
