@@ -1,6 +1,8 @@
 import '../styles/main.scss'
+import axios from 'axios';
+import { URL } from './config/config'
+import { getUserToken } from './helpers/auth'
 import { getCards } from './card'
-getCards();
 import { renderCards } from './helpers/renderCards'
 
 window.addEventListener('load', async function() {
@@ -35,13 +37,28 @@ for (let i = 0; i < items.length; i++) {
 
 let searchIcon = document.querySelector('.header__search__icon'),
     closeSearchIcon = document.querySelector('.search__bar__icon'),
-    menuSearch = document.querySelector('.search');
+    menuSearch = document.querySelector('.search'),
+    buttonSearch = document.querySelector('#search_submit'),
+    searchInput = document.querySelector('.search__bar__input');
+
+function closeSearchTab() {
+    menuSearch.classList.remove('search--active');
+    menuSearch.classList.add('search--inactive');
+}
 
 searchIcon.addEventListener('click', function () {
     menuSearch.classList.remove('search--inactive');
     menuSearch.classList.add('search--active');
 });
-closeSearchIcon.addEventListener('click', function () {
-    menuSearch.classList.remove('search--active');
-    menuSearch.classList.add('search--inactive');
+closeSearchIcon.addEventListener('click', closeSearchTab);
+
+buttonSearch.addEventListener('click', async function() {
+    let search = searchInput.value;
+    if (search.trim() !== '') {
+        const searchQuery = '?search=' + search;
+        const cards = await getCards(searchQuery);
+        listCards.innerHTML = renderCards(cards);
+        searchInput.value = '';
+        closeSearchTab();
+    }
 });
