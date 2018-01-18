@@ -18,6 +18,23 @@
     }
   }
 }
+.no-card {
+  animation-name: remove-one-card;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: $easeInOutCubic;
+  @keyframes remove-one-card {
+    0% {
+      left: 0%;
+      opacity: 1;
+    }
+    100% {
+      left: 100%;
+      opacity: 0;
+    }
+  } 
+}
+
 .article__header {
   display: flex;
   height: 76px;

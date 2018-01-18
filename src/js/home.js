@@ -13,7 +13,7 @@ const searchValue = '';
 const floatingBtn = document.querySelector('.floating--button');
 
 floatingBtn.addEventListener('click', function() {
-    redirectTo('article');
+    redirectTo('add-card');
 });
 
 window.addEventListener('load', async function () {
@@ -134,12 +134,20 @@ async function detailsCard() {
 
     if (backButton) {
         backButton.addEventListener('click', async function () {
-            listCards.innerHTML = '';
-            listCards.innerHTML = renderCards(cards);
-            const Cards = document.querySelectorAll('.Cards');
-            for (var i = 0; i < Cards.length; i++) {
-                Cards[i].addEventListener('click', detailsCard);
-            }
+            listCards.querySelector('.one-card').classList.add('no-card');
+            setTimeout(() => {
+                listCards.classList.add('no-opacity');
+                setTimeout(() => {
+                    listCards.innerHTML = '';
+                listCards.classList.remove('no-opacity');
+                listCards.innerHTML = renderCards(cards);
+                const Cards = document.querySelectorAll('.Cards');
+                for (var i = 0; i < Cards.length; i++) {
+                    Cards[i].addEventListener('click', detailsCard);
+                }
+                }, 60);
+            }, 600);
+            
         })
     }
 }
