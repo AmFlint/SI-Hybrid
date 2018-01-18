@@ -2,7 +2,8 @@ import '../styles/main.scss'
 import axios from "axios";
 import {URL} from "./config/config";
 import {redirectTo} from "./helpers/redirect";
-import {getUserToken} from "./helpers/auth";
+import { getUserToken } from "./helpers/auth";
+import { saveNotification } from './helpers/notification';
 
 let stars = document.querySelectorAll('.add__card--rate > i');
 
@@ -51,6 +52,7 @@ function addCard(e) {
         })
             .then((response) => {
                 if (response.status === 200) {
+                    saveNotification('Tu viens de partager un Urbex !');
                     redirectTo('home');
                 }
             })
