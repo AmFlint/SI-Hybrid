@@ -1,38 +1,29 @@
 import '../styles/main.scss'
 import axios from 'axios';
 import { URL } from './config/config'
-import { saveUserToken, getUserToken } from './helpers/auth'
-import { redirectTo } from './helpers/redirect';
-
-const form = document.querySelector('.submit__box');
+import { saveUserToken, getUserToken, removeUserToken } from './helpers/auth'
+import { redirectTo } from './helpers/redirect.js'
 
 if (getUserToken()) {
     redirectTo('home');
 }
 
-form.addEventListener( 'submit' , signUp )
+const form = document.querySelector('.submit__box');
+
+form.addEventListener( 'submit' , login )
 
 
-function signUp(e) {
+function login(e) {
     e.preventDefault();
-    const userName = this.querySelector('#username');
-    const email = this.querySelector('#email');
-    const passwordVerification = this.querySelector('#password-verification');
+    const userName = this.querySelector('#userName');
     const password = this.querySelector('#password');
-    if (validateSignupInputs(
-        userName.value,
-        email.value,
-        password.value,
-        passwordVerification.value)
-    ) {
+    if (!inputIsEmpty()) {
         axios({
-            url : URL + '/signup',
+            url : URL + '/login',
             method : 'POST',
             data : {
-                username: userName.value,
-                email: email.value,
-                password: password.value,
-                passwordVerification: passwordVerification.value
+                username : userName.value,
+                password : password.value
             },
             headers : {
                 "Access-Control-Allow-Origin":  "*",
@@ -41,29 +32,24 @@ function signUp(e) {
             }
         })
         .then((response) => {
-            if (response.status == 200) {
+            if (response.status === 200) {
                 saveUserToken(response.data);
+                console.log('home');
                 redirectTo('home');
             }
         })
-        .catch((err) => console.log(err))
+        .catch((err) => console.log(err.message))
     }
 }
 
-function inputIsEmpty(inputValue) {
-        return inputValue.trim() === '';
+function inputIsEmpty() {
+    if (typeof document !== "undefined") {
+        var userName = window.document.querySelector('#userName');
+        var password = window.document.querySelector('#password');
+
+        return !userName.value.trim() && !password.value.trim()
+    }
 }
 
-function arePassWordsEqual(password, passwordVerification) {
-    return password === passwordVerification;
-}
 
-function validateSignupInputs(username, email, password, passwordVerification) {
-    const passwordVerif = arePassWordsEqual(password, passwordVerification);
-    return !inputIsEmpty(username)
-     && !inputIsEmpty(email)
-     && !inputIsEmpty(password)
-     && !inputIsEmpty(passwordVerification)
-     && passwordVerif;
-}
 
