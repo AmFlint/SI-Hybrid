@@ -54,11 +54,13 @@
   h2 {
     font-size: 24px;
     margin-bottom: 17px;
+    font-weight: bold;
   }
   h3 {
-    color: rgb(96, 96, 96);
+    color: $main-color;
     font-size: 20px;
     margin-bottom: 17px;
+    font-weight: bold;
   }
   .article__main {
     border-bottom: 1px solid rgb(230, 230, 230);
@@ -85,7 +87,10 @@
   }
   .article__head {
     color: white;
-    background: rgb(64, 64, 64);
+    background: $main-color;
+    h2 {
+      text-transform: capitalize;
+    }
     .article__headDetails {
       display: flex;
       justify-content: space-between;

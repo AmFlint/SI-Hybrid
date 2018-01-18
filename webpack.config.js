@@ -23,6 +23,7 @@ module.exports = {
     'add-card': './src/js/add-card.js',
     'detailsCard' : './src/js/detailsCard.js',
     'tabBar' : './src/js/tabBar.js',
+    'profil' : './src/js/profil.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
   output: {
@@ -97,6 +98,12 @@ module.exports = {
       chunks: ['detailsCard']
     }),
     new HtmlWebpackPlugin({
+      title: 'Publication cards for profil',
+      template: './src/pages/profilCard.pug',
+      filename: 'profilCard.html',
+      chunks: ['profilCard']
+    }),
+    new HtmlWebpackPlugin({
       title: 'Sign up',
       template: './src/pages/signup.pug',
       filename: 'signup.html',
@@ -107,6 +114,12 @@ module.exports = {
       template: './src/pages/discover.pug',
       filename: 'discover.html',
       chunks: ['discover']
+    }),
+    new HtmlWebpackPlugin({
+      title: "Profil",
+      template: './src/pages/profil.pug',
+      filename: 'profil.html',
+      chunks: ['profil']
     }),
     new HtmlWebpackPlugin({
         title: "Ajouter un urbex",

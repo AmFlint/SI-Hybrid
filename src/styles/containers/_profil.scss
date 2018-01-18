@@ -1,0 +1,20 @@
+$font-normal : 'Roboto', 'arial' , 'sans-serif';
+
+* {
+  font-family: $font-normal !important;
+}
+
+// .profil-top-container {
+//   // font-family: $font-normal;
+//   font-size: 140%;
+//   height: 50px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+.profil-picture {
+  height: 100px;
+  border-bottom: grey;
+  margin-top: 55px;
+}
