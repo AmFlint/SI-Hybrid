@@ -23,7 +23,8 @@ module.exports = {
     'add-card': './src/js/add-card.js',
     'detailsCard' : './src/js/detailsCard.js',
     'tabBar' : './src/js/tabBar.js',
-    'profil' : './src/js/profil.js'
+    'profil' : './src/js/profil.js',
+    'logout' : './src/js/logout.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
   output: {
@@ -102,6 +103,12 @@ module.exports = {
       filename: 'signup.html',
       chunks: ['signup']
     }),
+      new HtmlWebpackPlugin({
+          title: 'Logout',
+          template: './src/pages/logout.pug',
+          filename: 'logout.html',
+          chunks: ['logout']
+      }),
     new HtmlWebpackPlugin({
       title: "Le coup de coeur de l'équipe",
       template: './src/pages/discover.pug',
