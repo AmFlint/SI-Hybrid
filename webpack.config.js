@@ -22,6 +22,7 @@ module.exports = {
     'discover': './src/js/discover.js',
     'add-card': './src/js/add-card.js',
     'detailsCard' : './src/js/detailsCard.js',
+    'tabBar' : './src/js/tabBar.js',
     'profil' : './src/js/profil.js'
   },
   devtool: isProd ? '' : 'eval-source-map',
