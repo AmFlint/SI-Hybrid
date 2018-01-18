@@ -33,28 +33,28 @@ window.addEventListener('load', async function () {
         deleteNotification();
     }
 });
-
-//js for tab
-let items = document.querySelectorAll('.tabBar__list__item'),
-    links = document.querySelectorAll('.tabBar__list__item > a');
-
-for (let i = 0; i < items.length; i++) {
-    links[i].addEventListener('click', function (e) {
-        e.preventDefault();
-    })
-}
-
-
-for (let i = 0; i < items.length; i++) {
-    items[i].addEventListener('click', function () {
-        for (let j = 0; j < items.length; j++) {
-            items[j].classList.remove('items-tab-bar--active');
-        }
-        if (!this.classList.contains('items-tab-bar--active')) {
-            this.classList.add('items-tab-bar--active');
-        }
-    });
-}
+//
+// //js for tab
+// let items = document.querySelectorAll('.tabBar__list__item'),
+//     links = document.querySelectorAll('.tabBar__list__item > a');
+//
+// for (let i = 0; i < items.length; i++) {
+//     links[i].addEventListener('click', function (e) {
+//         e.preventDefault();
+//     })
+// }
+//
+//
+// for (let i = 0; i < items.length; i++) {
+//     items[i].addEventListener('click', function () {
+//         for (let j = 0; j < items.length; j++) {
+//             items[j].classList.remove('items-tab-bar--active');
+//         }
+//         if (!this.classList.contains('items-tab-bar--active')) {
+//             this.classList.add('items-tab-bar--active');
+//         }
+//     });
+// }
 
 //js for search
 
