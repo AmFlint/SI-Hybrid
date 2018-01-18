@@ -5,7 +5,7 @@ import { saveUserToken, getUserToken, removeUserToken } from './helpers/auth'
 import { redirectTo } from './helpers/redirect.js'
 
 if (getUserToken()) {
-    redirectTo('home');
+    redirectTo('submit');
 }
 
 const form = document.querySelector('.submit__box');
