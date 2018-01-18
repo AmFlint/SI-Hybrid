@@ -2,7 +2,7 @@ import '../styles/main.scss'
 import {getCards, getCard} from './card'
 import axios from 'axios';
 import {URL} from './config/config'
-import {getUserToken} from './helpers/auth'
+import {getUserToken, removeUserToken} from './helpers/auth'
 import {renderCards} from './helpers/renderCards'
 import {saveCardId} from './helpers/auth'
 import { redirectTo } from './helpers/redirect';
@@ -16,10 +16,13 @@ floatingBtn.addEventListener('click', function() {
     redirectTo('add-card');
 });
 
+const listCards = document.querySelector('#listCards');
 window.addEventListener('load', async function () {
-    const listCards = document.querySelector('#listCards');
-    cards = await getCards()
-    listCards.innerHTML = renderCards(cards)
+
+    cards = await getCards();
+    console.log(cards);
+
+    listCards.innerHTML = renderCards(cards);
     const Cards = document.querySelectorAll('.Cards');
     for (var i = 0; i < Cards.length; i++) {
         Cards[i].addEventListener('click', detailsCard);
@@ -30,10 +33,6 @@ window.addEventListener('load', async function () {
         deleteNotification();
     }
 });
-
-function goBack(cards) {
-    const listCards = document.querySelector('#listCards');
-}
 
 //js for tab
 let items = document.querySelectorAll('.tabBar__list__item'),
@@ -109,7 +108,7 @@ async function detailsCard() {
 </header>
 <main class="article">
     <section class="article__carousel">
-        <img src="">
+        <img src=""/>
     </section>
     <section class="article__head">
         <h2>${ card.title }</h2>
@@ -125,7 +124,7 @@ async function detailsCard() {
     <section>
         <h3>Lieu découvert par</h3>
         <div class="article__mainUser">
-            <img src="https://img2.grazia.fr/var/grazia/storage/images/article/musique-orelsan-s-apprete-a-sortir-un-nouvel-album-solo-849931/13584164-1-fre-FR/Musique-Orelsan-s-apprete-a-sortir-un-nouvel-album-solo_exact1900x908_l.jpg">
+            <img src="https://img2.grazia.fr/var/grazia/storage/images/article/musique-orelsan-s-apprete-a-sortir-un-nouvel-album-solo-849931/13584164-1-fre-FR/Musique-Orelsan-s-apprete-a-sortir-un-nouvel-album-solo_exact1900x908_l.jpg"/>
             <p>Aurelien Contentin</p>
         </div>
     </section>

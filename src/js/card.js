@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { URL } from './config/config'
-import { getUserToken } from './helpers/auth';
+import {getUserToken, removeUserToken} from './helpers/auth';
+import {redirectTo} from "./helpers/redirect";
 
 export async function getCards(params = '') {
         const req = await axios({
@@ -10,6 +11,12 @@ export async function getCards(params = '') {
                 "X-Access-Token" : getUserToken()
             }
         })
+        .catch(err => {
+            if (err) {
+                removeUserToken();
+                redirectTo('login');
+            }
+        });
         return req.data
 }
 

@@ -18,7 +18,7 @@ module.exports = {
     'index': './src/js/index.js',
     'article': './src/js/article.js',
     'home': './src/js/home.js',
-    'login': './src/js/login.js',
+    'signup': './src/js/signup.js',
     'discover': './src/js/discover.js',
     'add-card': './src/js/add-card.js',
     'detailsCard' : './src/js/detailsCard.js'
@@ -96,10 +96,10 @@ module.exports = {
       chunks: ['detailsCard']
     }),
     new HtmlWebpackPlugin({
-      title: 'Login',
-      template: './src/pages/login.pug',
-      filename: 'login.html',
-      chunks: ['login']
+      title: 'Sign up',
+      template: './src/pages/signup.pug',
+      filename: 'signup.html',
+      chunks: ['signup']
     }),
     new HtmlWebpackPlugin({
       title: "Le coup de coeur de l'équipe",
