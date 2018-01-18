@@ -14,7 +14,7 @@ export async function getCards(params = '') {
         .catch(err => {
             if (err) {
                 removeUserToken();
-                redirectTo('login');
+                redirectTo('index');
             }
         });
         return req.data

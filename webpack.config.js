@@ -21,7 +21,8 @@ module.exports = {
     'signup': './src/js/signup.js',
     'discover': './src/js/discover.js',
     'add-card': './src/js/add-card.js',
-    'detailsCard' : './src/js/detailsCard.js'
+    'detailsCard' : './src/js/detailsCard.js',
+    'tabBar' : './src/js/tabBar.js',
   },
   devtool: isProd ? '' : 'eval-source-map',
   output: {

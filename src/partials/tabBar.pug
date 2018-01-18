@@ -1,8 +1,17 @@
 div.tabBar
     ul.tabBar__list
-        li.tabBar__list__item
-            <a href="discover.html"><i class="icon-book_24px"></i> <p>Découvrir</p></a>
-        li.tabBar__list__item
-            <a href="home.html"><i class="icon-home_24px"></i> <p>Accueil</p></a>
-        li.tabBar__list__item
-            <a href=""><i class="icon-user_24px"></i> <p>Profile</p></a>
+
+        a(href="discover.html").tabBar__list__item
+            li#tabBarDiscover
+                i.icon-book_24px
+                p Découvrir
+        a(href="home.html").tabBar__list__item
+            li#tabBarHome
+                i.icon-book_24px
+                p Accueil
+        a(href="profil.html").tabBar__list__item
+            li#tabBarProfil
+                i.icon-book_24px
+                p Profil
+
+script(src='../js/tabBAr.js')
