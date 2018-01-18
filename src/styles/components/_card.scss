@@ -56,6 +56,12 @@
   margin: 0 auto;
   padding-bottom: 75px;
   padding-top : 50px;
+  transition: all .4s ease;
+
+  &.no-opacity {
+    opacity: 0;
+  }
+
   #goBack{
     position: absolute;
     i:before{
