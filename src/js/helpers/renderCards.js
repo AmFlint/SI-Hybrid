@@ -25,6 +25,12 @@ export function renderCards(cards) {
         })
     } else {
         // TODO: Render empty state if no cards.
+        return `
+        <div>
+            <img src="http://www.letelegramme.fr/images/2017/08/10/alexandre-s-est-assis-a-la-place-du-pianiste-mais-n-ose-pas_3556961.jpg" />
+            <h1>Oh! Il semble qu'aucun Urbex ne corresponde à votre recherche...</h1>
+        </div>
+        `;
     }
 }
 

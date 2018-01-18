@@ -11,13 +11,19 @@ export async function getCards(params = '') {
                 "X-Access-Token" : getUserToken()
             }
         })
-        .catch(err => {
-            if (err) {
+        .then(res => {
+            return res;
+        })
+        .catch(error => {
+            var err = error.toString();
+            if (err.indexOf('403') == false) {
                 removeUserToken();
-                redirectTo('login');
+                redirectTo('index');
+            } else {
+                return [];
             }
         });
-        return req.data
+        return req ? req.data : [];
 }
 
 export async function getCard(id) {

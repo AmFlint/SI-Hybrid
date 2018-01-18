@@ -84,7 +84,6 @@ module.exports = {
           chunks: ['article']
       }),
     new HtmlWebpackPlugin({
-      title: 'Home',
       template: './src/pages/home.pug',
       filename: 'home.html',
       chunks: ['home']
