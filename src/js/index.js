@@ -11,7 +11,7 @@ if (getUserToken()) {
 
 const form = document.querySelector('.submit__box');
 
-form.addEventListener( 'submit' , login )
+form.addEventListener( 'submit' , login );
 
 
 function login(e) {

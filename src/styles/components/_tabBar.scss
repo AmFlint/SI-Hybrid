@@ -27,6 +27,7 @@
       flex-grow: 1;
       padding-top: 5px;
       position: relative;
+      text-decoration: none;
       &--active{
         &:before {
           width: 100% !important;
@@ -45,7 +46,7 @@
       &:first-of-type {
         border-left: none;
       }
-      a {
+      li {
         display: block;
         font-family: $font-normal;
         @include font-size(1.3);
