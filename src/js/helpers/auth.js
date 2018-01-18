@@ -19,3 +19,7 @@ export function saveCardId(value) {
 export function saveUserToken(value) {
     window.localStorage.setItem('logAuth', JSON.stringify(value.token))
 }
+
+export function removeUserToken() {
+    window.localStorage.removeItem('logAuth')
+}
