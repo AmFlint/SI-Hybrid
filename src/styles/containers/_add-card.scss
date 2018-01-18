@@ -13,16 +13,22 @@
     }
     i.active {
       &:before {
-        color: red;
+        color: $main-color;
       }
     }
   }
   .submit {
     .submit__title {
       color: black;
+      margin: 5vh auto 5vh 20px !important;
+      font-size: 26px;
     }
     &:before {
       display: none;
     }
   }
+}
+
+.bold {
+  font-weight: bold;
 }
