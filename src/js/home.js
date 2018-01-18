@@ -6,10 +6,10 @@ import {getUserToken} from './helpers/auth'
 import {renderCards} from './helpers/renderCards'
 import {saveCardId} from './helpers/auth'
 import { redirectTo } from './helpers/redirect';
+import { getNotification, showNotification, deleteNotification } from './helpers/notification';
 
 let cards = [];
 const searchValue = '';
-  
 const floatingBtn = document.querySelector('.floating--button');
 
 floatingBtn.addEventListener('click', function() {
@@ -23,6 +23,11 @@ window.addEventListener('load', async function () {
     const Cards = document.querySelectorAll('.Cards');
     for (var i = 0; i < Cards.length; i++) {
         Cards[i].addEventListener('click', detailsCard);
+    }
+    const notification = getNotification();
+    if (notification) {
+        showNotification(notification, 'close', 2000);
+        deleteNotification();
     }
 });
 
