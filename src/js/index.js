@@ -3,6 +3,7 @@ import axios from 'axios';
 import { URL } from './config/config'
 import { saveUserToken, getUserToken, removeUserToken } from './helpers/auth'
 import { redirectTo } from './helpers/redirect.js'
+import { saveNotification } from './helpers/notification';
 
 if (getUserToken()) {
     redirectTo('home');
@@ -34,7 +35,7 @@ function login(e) {
         .then((response) => {
             if (response.status === 200) {
                 saveUserToken(response.data);
-                console.log('home');
+                saveNotification('Bienvenue à nouveau !');
                 redirectTo('home');
             }
         })

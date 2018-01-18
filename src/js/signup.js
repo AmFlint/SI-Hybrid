@@ -3,6 +3,7 @@ import axios from 'axios';
 import { URL } from './config/config'
 import { saveUserToken, getUserToken } from './helpers/auth'
 import { redirectTo } from './helpers/redirect';
+import { saveNotification } from './helpers/notification';
 
 const form = document.querySelector('.submit__box');
 
@@ -43,6 +44,7 @@ function signUp(e) {
         .then((response) => {
             if (response.status == 200) {
                 saveUserToken(response.data);
+                saveNotification('Bienvenue par nous !');
                 redirectTo('home');
             }
         })

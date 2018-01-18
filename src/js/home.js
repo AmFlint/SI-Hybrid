@@ -124,8 +124,7 @@ async function detailsCard() {
     <section>
         <h3>Lieu découvert par</h3>
         <div class="article__mainUser">
-            <img src="https://img2.grazia.fr/var/grazia/storage/images/article/musique-orelsan-s-apprete-a-sortir-un-nouvel-album-solo-849931/13584164-1-fre-FR/Musique-Orelsan-s-apprete-a-sortir-un-nouvel-album-solo_exact1900x908_l.jpg"/>
-            <p>Aurelien Contentin</p>
+            <p>${ card.user.username }</p>
         </div>
     </section>
     <section class="article__map">

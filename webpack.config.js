@@ -86,7 +86,6 @@ module.exports = {
           chunks: ['article']
       }),
     new HtmlWebpackPlugin({
-      title: 'Home',
       template: './src/pages/home.pug',
       filename: 'home.html',
       chunks: ['home']
@@ -96,12 +95,6 @@ module.exports = {
       template: './src/pages/detailsCard.pug',
       filename: 'detailsCard.html',
       chunks: ['detailsCard']
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Publication cards for profil',
-      template: './src/pages/profilCard.pug',
-      filename: 'profilCard.html',
-      chunks: ['profilCard']
     }),
     new HtmlWebpackPlugin({
       title: 'Sign up',
